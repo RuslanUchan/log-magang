@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 23, 2019 at 05:53 AM
+-- Generation Time: Jan 23, 2019 at 09:29 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -88,7 +88,11 @@ CREATE TABLE `log` (
 INSERT INTO `log` (`log_id`, `log`, `tanggal_log`, `logger_id`) VALUES
 (1, 'Mulai membuat aplikasi absensi untuk mahasiswa magang', '2019-01-21', 1),
 (2, 'Melanjutkan aplikasi absensi magang. Membuat aplikasi usable dan responsif.', '2019-01-22', 1),
-(3, 'Membantu tugas sehari-hari pak Ashari', '2019-01-22', 2);
+(3, 'Membantu tugas sehari-hari pak Ashari', '2019-01-22', 2),
+(4, 'Membuat aplikasi CRUD dengan Nodejs', '2019-01-23', 4),
+(5, 'Membuat aplikasi CRUD dengan Nodejs', '2019-01-23', 3),
+(6, 'Membuat aplikasi CRUD dengan Nodejs', '2019-01-23', 1),
+(10, 'Membuat laporan magang tentang React Native', '2019-01-23', 2);
 
 -- --------------------------------------------------------
 
@@ -170,7 +174,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `log`
 --
 ALTER TABLE `log`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `mahasiswa`

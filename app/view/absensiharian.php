@@ -107,17 +107,13 @@
             <?php else: ?>
               <?php  
                 $cek= $MySQLiconn->query("SELECT * FROM absen WHERE magang_id='".$magang_id."' and tanggal='".$date."' and intime!=0");
-                $result =  $cek->num_rows;
+                $result = $cek->num_rows;
               ?>
               <?php if ($result!=0): ?>
                 <?php $res = $MySQLiconn->query("SELECT * from absen where DATE(tanggal) = DATE(NOW()) and magang_id=$magang_id"); ?>
                 <?php while($row=$res->fetch_array()): ?>
-                  <!-- <a href="editmhs.php?edit=<?php //echo $row['magang_id']; ?>" class="btn btn-outline-primary btn-flat m-b-15">Ubah Data Diri </a>  -->
-                  <?php //if (isset($_GET['editabsen'])): ?>
-                    <!-- <button type="submit" class="btn btn-danger btn-flat m-b-15" name="updateabsen"><i class="fa fa-sign-out"></i>confirm</button>  -->
-                  <?php //elseif ($row['outtime']!=0): ?>
+                    <a href="logharian.php" class="btn btn-primary btn-flat mb-3">log harian </a>
                     <a href="../action/logout.php" class="btn btn-warning btn-flat m-b-15">sudah absen </a> 
-                  <?php //endif; ?>
                 <?php endwhile; ?>
               <?php else: ?>
                 <button type="submit" class="btn btn-primary btn-flat m-b-15" name="saveabsen"><i class="fa fa-sign-out"></i>masuk</button> 

@@ -33,8 +33,6 @@
 
 </head>
 <body>
-
-
         <!-- Left Panel -->
 
     <aside id="left-panel" class="left-panel">
@@ -72,6 +70,10 @@
 
                     <li class="menu-item">
                         <a href="jurnal.php?bulan=-&tahun=-&cari_jurnal=Cari+Jurnal"> <i class="menu-icon fa fa-money"></i>Jurnal </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="logmhs.php"> <i class="menu-icon fa fa-address-book-o"></i>Log </a>
                     </li>
                          
                 </ul>
