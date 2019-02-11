@@ -1,6 +1,10 @@
 <?php 
 // mengaktifkan session php
 session_start();
+
+//error_reporting(E_ALL);
+//ini_set('display_errors', 'On');
+
  
 // menghubungkan dengan koneksi
 include_once '../lib/db.php';
@@ -9,6 +13,7 @@ include_once '../lib/db.php';
 // Check connection
 if (mysqli_connect_errno()){
 	echo "Koneksi database gagal : " . mysqli_connect_error();
+	echo "<script>alert('ERROR. DB FAIL');</script>";
 }
 
 // menangkap data yang dikirim dari form
@@ -28,9 +33,7 @@ if ($username == $admin) {
 	$data = mysqli_query($MySQLiconn, $SQL) or mysqli_error($MySQLiconn);
 	$row = $data->fetch_array();
 	$cek = mysqli_num_rows($data);
-
-	// menghitung jumlah data yang ditemukan
-	$cek = mysqli_num_rows($data);}
+}
  
 if($cek > 0) {
 	if ($username == $admin) {
@@ -62,8 +65,13 @@ if($cek > 0) {
 	 
  	$_SESSION['aktif'] = "login";
 
-	header("location:../view/absensiharian.php");
+//	if (!isset($_GET["utm_source"]) {
+//		header("StatusL 200 OK", false, 200);
+//	}
 
+	header("location: http://10.1.10.13:800/app/view/absensiharian.php");
+//	exit;
+//	echo "<script>document.location='http//10.1.10.13:800/app/view/absensiharian.php'</script>";
 	
 } else{
 	header("location:../view/login.php?pesan=gagal");

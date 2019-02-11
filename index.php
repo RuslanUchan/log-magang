@@ -6,6 +6,14 @@
       // menghapus semua session
       session_destroy();
   }
+
+  // include_once 'app/lib/db.php';
+
+  // $SQL = "SELECT * FROM mahasiswa WHERE magang_id=1";
+  // $data = mysqli_query($MySQLiconn, $SQL) or mysqli_error($MySQLiconn);
+  // $mahasiswa = $data->fetch_array();
+
+  // echo var_dump($mahasiswa);
  ?>
 
 <!doctype html>
@@ -61,7 +69,7 @@
         <div class="container">
             <div class="login-content">
                 <div class="login-logo">
-                    <a href="<?=$_SERVER['PHP_SELF'];?>">
+                    <a href="">
                         <!-- <img class="align-content" width="200px" src="../../images/logo.png" alt=""> -->
                         <h2>Log Magang Immobi</h2>
                     </a>
@@ -71,11 +79,11 @@
 
                         <div class="form-group">
                             <label>Username</label>
-                            <input type="text" class="form-control" placeholder="Username" name="username">
+                            <input type="text" class="form-control" placeholder="Username" name="username" autocomplete="off">
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" class="form-control" placeholder="Password" name="password">
+                            <input type="password" class="form-control" placeholder="Password" name="password" autocomplete="off">
                         </div>
                         <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Sign in</button>
                      

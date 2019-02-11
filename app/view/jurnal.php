@@ -27,7 +27,7 @@ include_once 'header.php';
 						<option value=""><?php $bulan = $_GET['bulan']; echo $bulan ?></option>
 			 
 						<option value="1">Januari</option>
-						<option value="2">Febuari</option>
+						<option value="2">Februari</option>
 						<option value="3">Maret</option>
 						<option value="4">April</option>
 						<option value="5">Mei</option>
