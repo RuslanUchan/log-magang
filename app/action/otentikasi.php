@@ -69,7 +69,8 @@ if($cek > 0) {
 //		header("StatusL 200 OK", false, 200);
 //	}
 
-	header("location: http://10.1.10.13:800/app/view/absensiharian.php");
+	// header("location: http://10.1.10.13:800/app/view/absensiharian.php");
+	header("location: ../view/absensiharian.php");
 //	exit;
 //	echo "<script>document.location='http//10.1.10.13:800/app/view/absensiharian.php'</script>";
 	

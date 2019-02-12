@@ -41,7 +41,7 @@ include_once 'header.php';
 					</select>
 					
 					<select class="" name="tahun">
-						<option value=""><?php  $tahun = $_GET['tahun']; echo $tahun ?></option>
+						<option value="<?= $_GET['tahun']; ?>"><?php  $tahun = $_GET['tahun']; echo $tahun ?></option>
 						
 						<!-- Start counting year -->
 						<?php for ($i=2018; $i<=date("Y") ; $i++) { ?> 
@@ -61,6 +61,7 @@ include_once 'header.php';
 							<!-- <th>Magang_ID</th> -->
 							<th>Nama</th>
 							<th>Hadir</th>
+							<th>Terlambat</th>
 							<th>Izin</th>
 							<th>Sakit</th>
 							<th>Alfa</th>
@@ -79,13 +80,19 @@ include_once 'header.php';
 	$awal_bulan = $tahun . '/' . $bulan . '/01';
 	$akhir_bulan = $tahun . '/' . $bulan . '/31';
 
+	$jam = '08:30:00';
+	$limit_terlambat = strtotime($jam);
+	$l = date('H:i:s', $limit_terlambat);
+
 	$res = $MySQLiconn->query("SELECT magang_id, nama FROM mahasiswa");
 	while($row=$res->fetch_array()): ?>
 		<tr>
 	<?php 
 		// SELECT COUNT(no) FROM absen WHERE ket = 'hadir' AND (tanggal > '2019/01/01' AND tanggal < '2019/01/31') AND magang_id = 1;
-		$hadir = $MySQLiconn->query("SELECT no FROM absen WHERE magang_id = $row[magang_id] AND  ket = 'hadir' AND (tanggal > '$awal_bulan' AND tanggal < '$akhir_bulan')");
+		$hadir = $MySQLiconn->query("SELECT no FROM absen WHERE magang_id = $row[magang_id] AND ket = 'hadir' AND (tanggal > '$awal_bulan' AND tanggal < '$akhir_bulan') AND intime < '$l'");
 		$countHadir = mysqli_num_rows($hadir);
+		$terlambat = $MySQLiconn->query("SELECT no FROM absen WHERE magang_id = $row[magang_id] AND ket = 'hadir' AND (tanggal > '$awal_bulan' AND tanggal < '$akhir_bulan') AND intime > '$l'");
+		$countTerlambat = mysqli_num_rows($terlambat);
 		$izin = $MySQLiconn->query("SELECT no FROM absen WHERE magang_id = $row[magang_id] AND ket = 'izin'");
 		$countIzin = mysqli_num_rows($izin);
 		$sakit = $MySQLiconn->query("SELECT no FROM absen WHERE magang_id = $row[magang_id] AND ket = 'sakit'");
@@ -97,6 +104,7 @@ include_once 'header.php';
 		<!-- <td><?php // echo $row['magang_id']; ?></td> -->
 		<td><?php echo $row['nama']; ?></td>
 		<td><?php echo $countHadir; ?></td>
+		<td><?php echo $countTerlambat; ?></td>
 		<td><?php echo $countIzin; ?></td>
 		<td><?php echo $countSakit; ?></td>
 		<td><?php echo $countAlfa; ?></td>

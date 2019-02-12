@@ -4,7 +4,7 @@
 
   // echo var_dump($_SESSION);
 
-  $query_log = $MySQLiconn->query("SELECT log, tanggal_log FROM log WHERE logger_id='$_SESSION[magang_id]'ORDER BY tanggal_log ASC");
+  $query_log = $MySQLiconn->query("SELECT log, tanggal_log FROM log WHERE logger_id='$_SESSION[magang_id]'ORDER BY tanggal_log DESC");
   // $start_date = date()
  ?>
 
