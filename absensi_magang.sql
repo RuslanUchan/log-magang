@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 23, 2019 at 09:29 AM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.11
+-- Generation Time: May 06, 2019 at 04:00 AM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -47,7 +47,16 @@ INSERT INTO `absen` (`no`, `magang_id`, `tanggal`, `intime`, `ket`) VALUES
 (4, 1, '2019-01-23', '08:43:11', 'hadir'),
 (9, 4, '2019-01-23', '09:14:13', 'hadir'),
 (10, 3, '2019-01-23', '09:17:29', 'hadir'),
-(11, 2, '2019-01-23', '10:29:30', 'hadir');
+(11, 2, '2019-01-23', '10:29:30', 'hadir'),
+(12, 2, '2019-02-11', '13:06:33', 'hadir'),
+(13, 3, '2019-02-11', '07:54:20', 'hadir'),
+(14, 1, '2019-02-11', '09:00:00', 'alfa'),
+(15, 2, '2019-02-14', '15:46:23', 'hadir'),
+(16, 2, '2019-02-26', '14:19:11', 'hadir'),
+(17, 3, '2019-02-26', '15:03:51', 'hadir'),
+(18, 4, '2019-02-26', '15:04:12', 'hadir'),
+(19, 2, '2019-03-04', '17:46:50', 'hadir'),
+(20, 2, '2019-05-06', '08:56:38', 'hadir');
 
 -- --------------------------------------------------------
 
@@ -162,7 +171,7 @@ ALTER TABLE `mahasiswa`
 -- AUTO_INCREMENT for table `absen`
 --
 ALTER TABLE `absen`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `admin`
