@@ -1,10 +1,10 @@
 <?php
-     define('_HOST_NAME','http://35.229.197.245:800/');
-     define('_DATABASE_NAME','absensi_magang');
-     // define('_DATABASE_USER_NAME','magang');
-     define('_DATABASE_USER_NAME','root');
-     // define('_DATABASE_PASSWORD','m4g4ng');
-     define('_DATABASE_PASSWORD','qwery123');
+     define('_HOST_NAME','');
+     define('_DATABASE_NAME','');
+     // define('_DATABASE_USER_NAME','');
+     define('_DATABASE_USER_NAME','');
+     // define('_DATABASE_PASSWORD','');
+     define('_DATABASE_PASSWORD','');
 
      $MySQLiconn = new MySQLi(_HOST_NAME,_DATABASE_USER_NAME,_DATABASE_PASSWORD,_DATABASE_NAME);
 	 
